@@ -1,11 +1,11 @@
 //curl http://localhost:3000/date?datetime=2021-03-21T10:50:00
 const express = require('express');
 const app = express();
-const LIMIT = 20;
+const LIMIT = process.env.MYLIMIT;
 const PORT = 3000;
 
 let connections = [];
-let DELAY = 1000;
+let DELAY = process.env.MYDELAY;
 let tick = 0;
 
 app.get("/date", (req, res, next) => {
